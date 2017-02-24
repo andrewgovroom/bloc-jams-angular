@@ -11,7 +11,7 @@
      </section>
      <table class="album-view-song-list">
          
-             <tr class="album-view-song-item" ng-repeat="song in album.albumData.songs track by $index" ng-mouseover="hovered = true" ng-mouseleave="hovered = false">
+         <tr class="album-view-song-item" ng-repeat="song in album.albumData.songs track by $index" ng-mouseover="hovered = true" ng-mouseleave="hovered = false">
             
              <td class="song-item-number">
                 <span ng-show="!hovered && !song.playing">{{$index + 1}}</span>
