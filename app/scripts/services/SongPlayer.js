@@ -8,6 +8,17 @@
  * @type {Object}
  */
          var currentBuzzObject = null;
+         
+         
+ /**
+* @desc Default Buzz object volume
+* @type {Integer}
+*/
+         
+         var currentVolume = 80;
+         
+         
+         
         
                  /**
  * @function setSong
@@ -25,6 +36,8 @@
                         formats: ['mp3'],
                         preload: true
                 });
+
+                SongPlayer.setVolume(currentVolume);
              
              
                 currentBuzzObject.bind('timeupdate', function() {
@@ -166,6 +179,23 @@
             if (currentBuzzObject) {
                 currentBuzzObject.setTime(time);
             }
+        };         
+         
+    
+          SongPlayer.volume = null;
+         
+          /**
+ * @function setVolume
+ * @desc Set Volume
+ * @param {Number} int
+ */
+        SongPlayer.setVolume = function(setVolume) {
+            
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(setVolume);
+            }
+            SongPlayer.volume = currentVolume;
+
         };         
          
          
